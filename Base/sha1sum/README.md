@@ -1,5 +1,5 @@
-# md5
-md5sum verify
+# sha1sum 
+verify sha1
 
 规则:  
 

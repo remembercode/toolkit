@@ -1,5 +1,6 @@
-# md5
-md5sum verify
+# md5sum 
+verify md5
+
 
 使用规则:  
 
