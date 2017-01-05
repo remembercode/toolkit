@@ -1,7 +1,8 @@
 # md5
 md5sum verify
 
-使用规则:
+使用规则:  
+
 Rules:
 
     md5sum.bat 待验证文件 待验证md5字符串
@@ -10,7 +11,8 @@ Rules:
     md5sum.bat 待验证文件 只包含一行待验证md5字符串的文件
     md5sum.bat file_to_verify file_contains_md5_in_one_line_to_verify
 
-示例:
+示例:  
+
 Examples:
 
     md5sum.bat 0004.gpg4win-2.3.3.exe gpg4win-2.3.3.exe.md5
