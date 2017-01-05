@@ -3,13 +3,12 @@ md5sum verify
 
 规则:
 Rules:
-	|---|---|---|
-    |sha1sum.bat|待验证文件|要验证的sha1字符串
-    |sha1sum.bat|file_to_verify|sha1_to_verify
 
- 	|---|---|---|
-    |sha1sum.bat|待验证文件|只包含单行要验证的sha1字符串的文件
-    |sha1sum.bat|file_to_verify|file_contains_sha1_one_line_to_verify
+    sha1sum.bat 待验证文件 要验证的sha1字符串
+    sha1sum.bat file_to_verify sha1_to_verify
+
+    sha1sum.bat 待验证文件 只包含单行要验证的sha1字符串的文件
+    sha1sum.bat file_to_verify file_contains_sha1_one_line_to_verify
 
 示例:
 Examples:
