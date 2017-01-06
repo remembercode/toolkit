@@ -79,8 +79,6 @@ apache tomcat web server
 ### 2.3. sha1
 	sha1sum.bat C:\App\apache-tomcat-8.0.39-windows-x64.zip C:\App\apache-tomcat-8.0.39-windows-x64.zip.sha1
 	Success
-
-## pad
 	
 ## 3. 解压<br/><br/>3. Extract
 	解压到 C:\App\apache-tomcat-8.5.9
