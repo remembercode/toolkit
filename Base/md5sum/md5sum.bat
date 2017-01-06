@@ -1,14 +1,17 @@
 @echo off
 SETLOCAL ENABLEDELAYEDEXPANSION
-
+REM check file to verify if exist
 if not exist "%~1" (
 	echo Error : "%~1" doesn`t exist!
 	goto :eof
 )
 
+REM receive inputted md5
 set inputted_md5=%~2
 
+REM if input is a file
 if exist "!inputted_md5!" (
+	REM read first line in file
 	for /f "delims=" %%i in (!inputted_md5!) do (
 		set inputted_md5=%%i
 		REM echo %%i
@@ -16,9 +19,9 @@ if exist "!inputted_md5!" (
 	)
 )
 :read_md5_from_file
-REM echo !inputted_md5!
-REM pause
-REM goto :eof
+
+REM get first 32 char
+set inputted_md5=!inputted_md5:~0,32!
 
 set /a n=0
 :her

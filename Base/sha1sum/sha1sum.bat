@@ -16,6 +16,9 @@ if exist "!inputted_sha1!" (
 )
 :read_sha1_from_file
 
+REM get first 40 char
+set inputted_sha1=!inputted_sha1:~0,40!
+
 set inputted_sha1=!inputted_sha1:A=a!
 set inputted_sha1=!inputted_sha1:B=b!
 set inputted_sha1=!inputted_sha1:C=c!

@@ -15,6 +15,8 @@ if exist "!inputted_sha256!" (
 	)
 )
 :read_sha256_from_file
+REM get first 64 char
+set inputted_sha256=!inputted_sha256:~0,64!
 
 set inputted_sha256=!inputted_sha256:A=a!
 set inputted_sha256=!inputted_sha256:B=b!
