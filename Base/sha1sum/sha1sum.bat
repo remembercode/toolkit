@@ -23,16 +23,19 @@ set inputted_sha1=!inputted_sha1:D=d!
 set inputted_sha1=!inputted_sha1:E=e!
 set inputted_sha1=!inputted_sha1:F=f!
 
-for /f "tokens=1-20 skip=1 delims= " %%a in ('certutil -hashfile "%~1" sha1') do (
-	set computed_sha1=%%a%%b%%c%%d%%e%%f%%g%%h%%i%%j%%k%%l%%m%%n%%o%%p%%q%%r%%s%%t
-	if "!computed_sha1!" EQU "!inputted_sha1!" (
-		echo Success
-	) else (
-		echo Computed SHA1 : !computed_sha1!
-		echo Inputted SHA1 : !inputted_sha1!
-		echo Fail
-	)
-	goto end
+for /f "tokens=1* skip=1 delims=" %%a in ('certutil -hashfile "%~1" sha1') do (
+	set computed_sha1=%%a
+	goto computed
+)
+:computed
+set computed_sha1=!computed_sha1: =!
+
+if "!computed_sha1!" EQU "!inputted_sha1!" (
+	echo Success
+) else (
+	echo Computed SHA1 : !computed_sha1!
+	echo Inputted SHA1 : !inputted_sha1!
+	echo Fail
 )
 :end
 goto :eof
