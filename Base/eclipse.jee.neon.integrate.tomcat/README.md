@@ -1,11 +1,11 @@
-# integrate standalone maven 
-Eclipse JavaEE Neon Integrate Standalone Maven
+# integrate tomcat
+Eclipse JavaEE Neon Integrate Tomcat
 
 
 ## 1. Install [oracle.jdk](/Base/oracle.jdk)
 ## 2. Install [Eclipse.JEE.Neon](/Base/eclipse.jee.neon)
-## 3. Install [Maven](/Base/eclipse.jee.neon)
-## 4. Config Eclipse.JEE.Neon Intergrate Standalone Maven
+## 3. Extract [tomcat](/Base/tomcat)
+## 4. Config Eclipse.JEE.Neon Intergrate Tomcat
 
 ### 4.1. Specified JDK Run Eclipse
 	Right Click On C:\App\eclipse-jee-neon-2-win32-x86_64\eclipse.exe
@@ -33,15 +33,14 @@ Eclipse JavaEE Neon Integrate Standalone Maven
 ### 4.4. Specified Standalone Maven
 	Select Window
 	Select Perferences
-	Select Maven
-	Select Installations
-	Select "Add"
-		Install type : External
-		Installation home : C:\App\apache-maven-3.3.9
-		Installation name : apache-maven-3.3.9
-		Select Finish
-	Click apache-maven-3.3.9
-	Apply
+	Select Server
+	Select Server Enviroments
+	Select the type of runtime enviroments "Apache Tomcat v8.5"
+	Click Next
+		Name : Apache Tomcat v8.5
+		Tomcat installation directory : C:\App\apache-tomcat-8.5.9
+		JRE : jdk1.8.0_112
+	Click Finish
 	OK
 
 ### 4.5. Specified Standalone Maven Settings
