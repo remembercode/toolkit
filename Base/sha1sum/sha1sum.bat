@@ -16,8 +16,23 @@ if exist "!inputted_sha1!" (
 )
 :read_sha1_from_file
 
+
 REM get first 40 char
 set inputted_sha1=!inputted_sha1:~0,40!
+
+set /a n=0
+:her
+set u=!inputted_sha1:~%n%,1!
+if not "!u!"=="" (
+	set /a n=!n! + 1
+	goto her
+) else (
+	if "%n%" NEQ "40" (
+		echo Fail, !inputted_sha1! length is %n%, should be 40!
+		goto :eof
+	)
+) 
+
 
 set inputted_sha1=!inputted_sha1:A=a!
 set inputted_sha1=!inputted_sha1:B=b!

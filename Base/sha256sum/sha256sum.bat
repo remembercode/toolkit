@@ -17,6 +17,18 @@ if exist "!inputted_sha256!" (
 :read_sha256_from_file
 REM get first 64 char
 set inputted_sha256=!inputted_sha256:~0,64!
+set /a n=0
+:her
+set u=!inputted_sha256:~%n%,1!
+if not "!u!"=="" (
+	set /a n=!n! + 1
+	goto her
+) else (
+	if "%n%" NEQ "64" (
+		echo Fail, !inputted_sha256! length is %n%, should be 64!
+		goto :eof
+	)
+) 
 
 set inputted_sha256=!inputted_sha256:A=a!
 set inputted_sha256=!inputted_sha256:B=b!

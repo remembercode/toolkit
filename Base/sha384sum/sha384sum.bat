@@ -17,6 +17,18 @@ if exist "!inputted_sha384!" (
 :read_sha384_from_file
 REM get first 96 char
 set inputted_sha384=!inputted_sha384:~0,96!
+set /a n=0
+:her
+set u=!inputted_sha384:~%n%,1!
+if not "!u!"=="" (
+	set /a n=!n! + 1
+	goto her
+) else (
+	if "%n%" NEQ "96" (
+		echo Fail, !inputted_sha384! length is %n%, should be 96!
+		goto :eof
+	)
+) 
 
 set inputted_sha384=!inputted_sha384:A=a!
 set inputted_sha384=!inputted_sha384:B=b!

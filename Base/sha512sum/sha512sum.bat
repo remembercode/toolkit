@@ -17,6 +17,18 @@ if exist "!inputted_sha512!" (
 :read_sha512_from_file
 REM get first 128 char
 set inputted_sha512=!inputted_sha512:~0,128!
+set /a n=0
+:her
+set u=!inputted_sha512:~%n%,1!
+if not "!u!"=="" (
+	set /a n=!n! + 1
+	goto her
+) else (
+	if "%n%" NEQ "128" (
+		echo Fail, !inputted_sha512! length is %n%, should be 128!
+		goto :eof
+	)
+) 
 
 set inputted_sha512=!inputted_sha512:A=a!
 set inputted_sha512=!inputted_sha512:B=b!
